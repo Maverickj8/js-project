@@ -3,9 +3,12 @@ let spin = document.querySelector(".btn");
 let result = document.querySelector(".result");
 let img1 = document.querySelector(".img1");
 let img2 = document.querySelector(".img2");
+let audioSound = new Audio("./audio/dice.mp3")
 
 // Write a function that will check the values of the 2 random numbers and compare them and return a winner
 let winner = () => {
+  // add sound
+  audioSound.play()
   // create two random numbers with the range of 1 to 6
   let player1 = Math.ceil(Math.random() * 6);
   let player2 = Math.ceil(Math.random() * 6);
@@ -25,4 +28,4 @@ let winner = () => {
 };
 
 // add event listner
-document.addEventListener("click", winner);
+spin.addEventListener("click", winner);
